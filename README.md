@@ -38,6 +38,20 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` with t
 
 `make -j`
 
+
+Graph Format
+------------
+
+We store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list or Matrix-Market can be
+converted to `.gr` format with `graph-convert` tool provided in D-Galois-T. 
+You can build graph-convert as follows:
+
+```Shell
+cd $BUILD_DIR
+make graph-convert
+./tools/graph-convert/graph-convert --help
+```
+
 # Running Applications
 ------------
 If using MPI, multiple processes split across multiple hosts can be specified with the following:
