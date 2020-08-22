@@ -42,7 +42,7 @@ Preprocessing
 ------------
 
 We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
-converted to `.gr` format with `graph-convert` tool provided in D-Galois-T. 
+converted to `.gr` format with the tool `graph-convert` provided in D-Galois-T. 
 You can build graph-convert as follows:
 
 ```Shell
