@@ -39,10 +39,11 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` with t
 `make -j`
 
 
-Graph Format
+
+Preprocessing
 ------------
 
-We store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list or Matrix-Market can be
+We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list or Matrix-Market can be
 converted to `.gr` format with `graph-convert` tool provided in D-Galois-T. 
 You can build graph-convert as follows:
 
@@ -51,15 +52,13 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
+Then,  the graph is divided into chunks, which are evenly allocated to the hosts for parallel processing and the chunk is the processing unit. Besides, a dependency graph is generated. To partition the original graph data and generate the dependency graph:
+
+`GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./preprocessing <input graph> -partition=<partitioning policy>`
+
 
 # Running Applications
 ------------
 We concurrently submmit muntiple CGP jobs to D-Galois-T follwoing the real trace through the concurrent_jobs application. To concurrently run this application, just need to give the follwing parameters, and the command can be specified with the following:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
-
-There are a few common command line flags that are worth noting. More details can be found by running the applications with the -help flag.
-
-`-partition=<partitioning policy>`
-
-Specifies the partitioning that you would like to use when splitting the graph among multiple hosts.
