@@ -2,7 +2,6 @@
 #include <pthread.h>
 #include "core/graph.hpp"
 
-
 #define MAX_DEPTH 100000000
 
 int main(int argc, char ** argv)
