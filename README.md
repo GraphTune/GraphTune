@@ -3,12 +3,12 @@
 GraphTune is an effective and lightweight runtime system, which can be integrated into existing distributed graph processing systems. The user only needs to make a minor extension to existing system via simply inserting a few lightweight APIs provided by GraphTune, and then the system can obtain much higher throughput brought by GraphTune. No modification is needed for graph applications.
 
 
-Integrated with existing graph processing systems
+1 Integrated with existing graph processing systems
 ------------
 
 To efficiently load the shared graph data, Access() replaces the original data load operation of existing system. Sync() replaces its original grab operation for synchronous processing of the chunks. Regularize() replaces its communication operation to achieve the optimized communication. Note that, to obtain the active chunks before each iteration, GetActiveChunks() is also provided, because this operation is used by some systems to skip the processing of inactive chunks. In the following part, we take D-Galois as an example to show how to execute the CGP jobs on the D-Galois integrated with GraphTune.
 
-Dependencies
+2 Dependencies
 ------------
 
 D-Galois-T (i.e., the version of D-Galois integrated with GraphTune) depends on the following software:
@@ -25,7 +25,7 @@ D-Galois-T (i.e., the version of D-Galois integrated with GraphTune) depends on 
   applications in Galois
 - Eigen (3.3.1 works for us) for some matrix-completion app variants
 
-Compiling
+3 Compiling
 ------------
 
 To build D-Galois-T, certain CMake flags must be specified:
@@ -38,7 +38,7 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` and `P
 
 
 
-Preprocessing
+4 Preprocessing
 ------------
 
 We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
@@ -55,7 +55,7 @@ Then, the graph is preprocessed for D-Galois-T as follows:
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
 
-Running Applications
+5 Running Applications
 ------------
 We can submmit the CGP jobs to D-Galois-T according to the real trace as follows:
 
