@@ -6,7 +6,7 @@ GraphTune is an effective and lightweight runtime system, which can be integrate
 # Integrated with existing graph processing systems
 ------------
 
-To efficiently load the shared graph data, Access() replaces the original data load operation of existing system. Sync() replaces its original grab operation for synchronous processing of the chunks. Regularize() replaces its communication operation to achieve the optimized communication. Note that, to obtain the active chunks before each iteration, GetActiveChunks() is also provided, because this operation is used by some systems to skip the processing of inactive chunks.
+To efficiently load the shared graph data, Access() replaces the original data load operation of existing system. Sync() replaces its original grab operation for synchronous processing of the chunks. Regularize() replaces its communication operation to achieve the optimized communication. Note that, to obtain the active chunks before each iteration, GetActiveChunks() is also provided, because this operation is used by some systems to skip the processing of inactive chunks. In the following part, we take D-Galois as an example to show how to execute the CGP jobs on the D-Galois integrated with GraphTune.
 
 # Dependencies
 ------------
