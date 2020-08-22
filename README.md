@@ -54,46 +54,12 @@ make graph-convert
 
 # Running Applications
 ------------
-If using MPI, multiple processes split across multiple hosts can be specified with the following:
+We concurrently submmit muntiple CPG jobs to D-Galois-T follwoing the real trace through the concurrent_jobs application. To concurrently run these applications, just need to give the follwing parameters, and the command can be specified with the following:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
 
-The distributed applications have a few common command line flags that are worth noting. More details can be found by running a distributed application with the -help flag.
+There are a few common command line flags that are worth noting. More details can be found by running the applications with the -help flag.
 
 `-partition=<partitioning policy>`
 
 Specifies the partitioning that you would like to use when splitting the graph among multiple hosts.
-
-`-exec=Sync,Async`
-
-Specifies synchronous communication (bulk-synchronous parallel where every host
-blocks for messages from other hosts at the end of a round of execution)
-or asynchronous communication (bulk-asynchronous parallel where a host does
-not have to block on messages from other hosts at the end of the round and
-may continue execution).
-
-`-graphTranspose`
-
-Specifies the transpose of the provided input graph. This is used to
-create certain partitions of the graph (and is required for some of the
-partitioning policies).
-
-`-runs`
-
-Number of times to run an application.
-
-`-statFile`
-
-Specify the file in which to output run statistics to.
-
-`-t`
-
-Number of threads to use on a single machine excluding a communication thread
-that is used by all of the provided distributed benchmarks. Note that
-GPUs only use 1 thread (excluding the communication thread).
-
-`-output` / `-outputLocation=<directory>`
-
-Outputs the result of running the application to a file. For example,
-specifying this flag on a bfs application will output the shortest distances to
-each node.
