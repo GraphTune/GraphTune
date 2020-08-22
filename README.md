@@ -11,7 +11,7 @@ To efficiently load the shared graph data, Access() replaces the original data l
 # Dependencies
 ------------
 
-D-Galois-T builds, runs, and has been tested on GNU/Linux. D-Galois-T depends on the following software:
+D-Galois-T (i.e., the version of D-Galois integrated with GraphTune) depends on the following software:
 
 - A modern C++ compiler compliant with the C++-17 standard (gcc >= 7, Intel >= 19.0.1, clang >= 7.0)
 - CMake (>= 3.13)
