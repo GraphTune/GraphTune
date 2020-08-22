@@ -1,7 +1,7 @@
 # GraphTune
 ------------
 
-It is an efficient dependency-aware substrate for high throughput of  the distributed concurrent graph processing jobs, and a lightweight runtime system which runs in existing graph processing sytems
+It is an efficient dependency-aware substrate for high throughput of the distributed concurrent graph processing jobs, and a lightweight runtime system which runs in existing graph processing systems.
 
 # Integrated with existing graph processing systems
 ------------
