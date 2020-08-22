@@ -54,7 +54,7 @@ make graph-convert
 
 # Running Applications
 ------------
-We concurrently submmit muntiple CPG jobs to D-Galois-T follwoing the real trace through the concurrent_jobs application. To concurrently run these applications, just need to give the follwing parameters, and the command can be specified with the following:
+We concurrently submmit muntiple CGP jobs to D-Galois-T follwoing the real trace through the concurrent_jobs application. To concurrently run this application, just need to give the follwing parameters, and the command can be specified with the following:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
 
