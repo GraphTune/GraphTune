@@ -1,7 +1,7 @@
 # GraphTune
 ------------
+GraphTune is an effective and lightweight runtime system, which can be integrated into existing distributed graph processing systems. The user only needs to make a minor extension to existing system via simply inserting a few lightweight APIs provided by GraphTune, and then the system can obtain much higher throughput brought by GraphTune. No modification is needed for graph applications.
 
-It is an efficient dependency-aware substrate for high throughput of the distributed concurrent graph processing jobs, and a lightweight runtime system which runs in existing graph processing systems.
 
 # Integrated with existing graph processing systems
 ------------
@@ -50,13 +50,13 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then, the graph is divided into chunks, which are evenly allocated to the hosts for parallel processing and the chunk is the processing unit. Besides, a dependency graph is generated. To partition the original graph data and generate the dependency graph:
+Then, the graph needs to be preprocessed:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
 
 # Running Applications
 ------------
-We concurrently submmit muntiple CGP jobs to D-Galois-T follwoing the real trace through the concurrent_jobs application. To concurrently run this application, just need to give the follwing parameters, and the command can be specified with the following:
+We concurrently submmit muntiple jobs to D-Galois-T through the concurrent_jobs application. To concurrently run this application, just need to give the follwing parameters, and the command can be specified with the following:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
