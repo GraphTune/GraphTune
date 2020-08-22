@@ -11,9 +11,7 @@ To efficiently load the shared graph data, Access() replaces the original data l
 # Dependencies
 ------------
 
-D-Galois-T builds, runs, and has been tested on GNU/Linux. Even though D-Galois-T may build on systems similar to Linux, we have not tested correctness or performance, so please
-beware. 
-D-Galois-T depends on the following software:
+D-Galois-T builds, runs, and has been tested on GNU/Linux. D-Galois-T depends on the following software:
 
 - A modern C++ compiler compliant with the C++-17 standard (gcc >= 7, Intel >= 19.0.1, clang >= 7.0)
 - CMake (>= 3.13)
@@ -52,7 +50,7 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then,  the graph is divided into chunks, which are evenly allocated to the hosts for parallel processing and the chunk is the processing unit. Besides, a dependency graph is generated. To partition the original graph data and generate the dependency graph:
+Then, the graph is divided into chunks, which are evenly allocated to the hosts for parallel processing and the chunk is the processing unit. Besides, a dependency graph is generated. To partition the original graph data and generate the dependency graph:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
