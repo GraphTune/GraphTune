@@ -41,7 +41,7 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` and `P
 Preprocessing
 ------------
 
-We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
+We first store the graph in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
 converted to `.gr` format with the tool `graph-convert` provided in D-Galois-T. 
 You can build graph-convert as follows:
 
@@ -50,7 +50,15 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then, the graph is preprocessed for D-Galois-T as follows:
+Then, the graph is preprocessed for D-Galois-T
+
+
+
+
+
+
+
+integrated with GraphTune as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
