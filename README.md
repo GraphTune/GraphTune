@@ -43,7 +43,7 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` with t
 Preprocessing
 ------------
 
-We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list or Matrix-Market can be
+We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
 converted to `.gr` format with `graph-convert` tool provided in D-Galois-T. 
 You can build graph-convert as follows:
 
