@@ -50,13 +50,13 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then, the graph needs to be preprocessed:
+Then, the graph is preprocessed for D-Galois-T integrated with GraphTune as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
 
 # Running Applications
 ------------
-We concurrently submmit muntiple jobs to D-Galois-T through the concurrent_jobs application. To concurrently run this application, just need to give the follwing parameters, and the command can be specified with the following:
+We can submmit the CGP jobs to D-Galois-T follwoing the real trace as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
