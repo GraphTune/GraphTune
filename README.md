@@ -34,7 +34,7 @@ To build D-Galois-T, certain CMake flags must be specified:
 
 `cmake ${GALOIS_ROOT} -DGALOIS_ENABLE_DIST=1`
 
-Once CMake is successfully completed, you can build the `concurrent_jobs` with the following command:
+Once CMake is successfully completed, you can build the `concurrent_jobs` and `Preprocessing` with the following command:
 
 `make -j`
 
@@ -54,7 +54,7 @@ make graph-convert
 ```
 Then,  the graph is divided into chunks, which are evenly allocated to the hosts for parallel processing and the chunk is the processing unit. Besides, a dependency graph is generated. To partition the original graph data and generate the dependency graph:
 
-`GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./preprocessing <input graph> -partition=<partitioning policy>`
+`GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
 
 # Running Applications
