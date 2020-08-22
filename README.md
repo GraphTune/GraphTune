@@ -25,7 +25,7 @@ D-Galois-T (i.e., the version of D-Galois integrated with GraphTune) depends on 
   applications in Galois
 - Eigen (3.3.1 works for us) for some matrix-completion app variants
 
-#Compiling
+# Compiling
 ------------
 
 To build D-Galois-T, certain CMake flags must be specified:
@@ -38,7 +38,7 @@ Once CMake is successfully completed, you can build the `concurrent_jobs` and `P
 
 
 
-Preprocessing
+# Preprocessing
 ------------
 
 We first store graphs in a binary format called *D-Galois-T graph file*  (`.gr` file extension). Other formats such as edge-list can be
@@ -50,13 +50,13 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then, the graph is preprocessed for D-Galois-T integrated with GraphTune as follows:
+Then, the graph is preprocessed for D-Galois-T as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
 
 # Running Applications
 ------------
-We can submmit the CGP jobs to D-Galois-T follwoing the real trace as follows:
+We can submmit the CGP jobs to D-Galois-T according to the real trace as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./concurrent_jobs <input graph> <number of submissions> <trace>`
