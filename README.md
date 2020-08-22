@@ -50,15 +50,7 @@ cd $BUILD_DIR
 make graph-convert
 ./tools/graph-convert/graph-convert --help
 ```
-Then, the graph is preprocessed for D-Galois-T
-
-
-
-
-
-
-
-integrated with GraphTune as follows:
+Then, the graph is preprocessed for D-Galois-T integrated with GraphTune as follows:
 
 `GALOIS_DO_NOT_BIND_THREADS=1 mpirun -n=<# of processes> -hosts=<machines to run on> ./Preprocessing <input graph> -partition=<partitioning policy>`
 
