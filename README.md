@@ -13,8 +13,7 @@ To efficiently load the shared graph data, Access() replaces the original data l
 
 D-Galois-T builds, runs, and has been tested on GNU/Linux. Even though D-Galois-T may build on systems similar to Linux, we have not tested correctness or performance, so please
 beware. 
-
-At the minimum, D-Galois-T depends on the following software:
+D-Galois-T depends on the following software:
 
 - A modern C++ compiler compliant with the C++-17 standard (gcc >= 7, Intel >= 19.0.1, clang >= 7.0)
 - CMake (>= 3.13)
