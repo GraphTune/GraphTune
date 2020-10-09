@@ -2,8 +2,6 @@
 
 GraphTune is an effective and lightweight runtime system, which can be integrated into existing distributed graph processing systems. The user only needs to make a minor extension to existing system via simply inserting a few lightweight APIs provided by GraphTune, and then the system can obtain much higher throughput brought by GraphTune. No modification is needed for graph applications.
 
-![](https://github.com/GraphTune/GraphTune/blob/master/timg.jpg?raw=true)
-
 
 Integrated with existing graph processing systems
 ------------
